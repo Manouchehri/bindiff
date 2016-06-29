@@ -1,0 +1,198 @@
+package y.f.d;
+
+import y.d.*;
+
+final class m
+{
+    private static boolean a(final n n) {
+        return (n.g() == 0.0 && n.i() == -1.0) || (n.g() == 0.0 && n.i() == 1.0) || (n.g() == -1.0 && n.i() == 0.0) || (n.g() == 1.0 && n.i() == 0.0);
+    }
+    
+    private static y b(final n n) {
+        final int f = a.f;
+        if (n.g() == 0.0 && n.i() == -1.0) {
+            final double n2 = n.b();
+            final double n3 = n.c() - n.f();
+            final double n4 = n.f();
+            final double n5 = n.e();
+            if (f == 0) {
+                return new y(n2, n3, n5, n4);
+            }
+        }
+        if (n.g() == 0.0 && n.i() == 1.0) {
+            final double n2 = n.b() - n.e();
+            final double n3 = n.c();
+            final double n4 = n.f();
+            final double n5 = n.e();
+            if (f == 0) {
+                return new y(n2, n3, n5, n4);
+            }
+        }
+        if (n.g() == 1.0 && n.i() == 0.0) {
+            final double n2 = n.b();
+            final double n3 = n.c();
+            final double n4 = n.e();
+            final double n5 = n.f();
+            if (f == 0) {
+                return new y(n2, n3, n5, n4);
+            }
+        }
+        if (n.g() == -1.0 && n.i() == 0.0) {
+            final double n2 = n.b() - n.e();
+            final double n3 = n.c() - n.f();
+            final double n4 = n.e();
+            final double n5 = n.f();
+            if (f == 0) {
+                return new y(n2, n3, n5, n4);
+            }
+        }
+        return null;
+    }
+    
+    static double a(final y y, final n n) {
+        if (a(n)) {
+            return a(y, b(n));
+        }
+        if (n.a(n, y, 0.001)) {
+            return 0.0;
+        }
+        return a(y, n.a(n));
+    }
+    
+    static double a(final y y, final y y2) {
+        if (y.a(y, y2)) {
+            return 0.0;
+        }
+        final double a = a(y, y2, false);
+        final double a2 = a(y, y2, true);
+        return Math.sqrt(a * a + a2 * a2);
+    }
+    
+    private static double a(final y y, final y y2, final boolean b) {
+        return a(b ? y.c() : y.d(), b ? (y.c() + y.a()) : (y.d() + y.b()), b ? y2.c() : y2.d(), b ? (y2.c() + y2.a()) : (y2.d() + y2.b()));
+    }
+    
+    private static double a(final double n, final double n2, final double n3, final double n4) {
+        if (n4 < n) {
+            return n4 - n;
+        }
+        if (n2 < n3) {
+            return n3 - n2;
+        }
+        return 0.0;
+    }
+    
+    private static double a(final y.d.m m, final y.d.m i) {
+        if (m.a(m, i) != null) {
+            return 0.0;
+        }
+        return Math.min(Math.min(Math.min(a(m, i.c()), a(m, i.d())), a(i, m.c())), a(i, m.d()));
+    }
+    
+    private static double a(final y y, final t[] array) {
+        final int f = a.f;
+        final t e = y.e();
+        final t t = new t(e.a, e.b + y.b());
+        final t t2 = new t(t.a + y.a(), t.b);
+        final t t3 = new t(t2.a, e.b);
+        final y.d.m[] array2 = { new y.d.m(e, t), new y.d.m(t3, t2), new y.d.m(e, t3), new y.d.m(t, t2) };
+        double min = Double.MAX_VALUE;
+        int i = 0;
+    Label_0210_Outer:
+        while (i < array.length) {
+            final y.d.m m = new y.d.m(array[i], array[(i + 1) % array.length]);
+            int j = 0;
+            while (true) {
+                while (j < array2.length) {
+                    min = Math.min(min, a(m, array2[j]));
+                    ++j;
+                    if (f == 0) {
+                        if (f != 0) {
+                            break;
+                        }
+                        continue Label_0210_Outer;
+                    }
+                    else {
+                        if (f != 0) {
+                            break Label_0210_Outer;
+                        }
+                        continue Label_0210_Outer;
+                    }
+                }
+                ++i;
+                continue;
+            }
+        }
+        return min;
+    }
+    
+    static double a(final n n, final t t) {
+        final int f = a.f;
+        if (a(n)) {
+            return a(b(n), t);
+        }
+        if (n.a(n, t, 0.001)) {
+            return 0.0;
+        }
+        final t[] a = n.a(n);
+        double n2 = Double.MAX_VALUE;
+        int i = 0;
+        double min = 0.0;
+        while (i < a.length) {
+            min = Math.min(n2, a(new y.d.m(a[i], a[(i + 1) % a.length]), t));
+            if (f != 0) {
+                return min;
+            }
+            n2 = min;
+            ++i;
+            if (f != 0) {
+                break;
+            }
+        }
+        return min;
+    }
+    
+    private static double a(final y y, final t t) {
+        if (y.a(t)) {
+            return 0.0;
+        }
+        final t e = y.e();
+        final t t2 = new t(e.a, e.b + y.b());
+        final t t3 = new t(t2.a + y.a(), t2.b);
+        final t t4 = new t(t3.a, e.b);
+        return Math.min(Math.min(Math.min(Math.min(Double.MAX_VALUE, a(new y.d.m(e, t2), t)), a(new y.d.m(t4, t3), t)), a(new y.d.m(e, t4), t)), a(new y.d.m(t2, t3), t));
+    }
+    
+    static double a(final y.d.m m, final t t) {
+        final double a = m.c().a;
+        final double a2 = m.d().a;
+        final double b = m.c().b;
+        final double b2 = m.d().b;
+        final double a3 = t.a();
+        final double b3 = t.b();
+        final double n = a2 - a;
+        final double n2 = b2 - b;
+        double n3 = a3 - a;
+        double n4 = b3 - b;
+        double n5 = 0.0;
+        Label_0158: {
+            if (n3 * n + n4 * n2 > 0.0) {
+                n3 = n - n3;
+                n4 = n2 - n4;
+                final double n6 = n3 * n + n4 * n2;
+                if (n6 <= 0.0) {
+                    n5 = 0.0;
+                    if (y.f.d.a.f == 0) {
+                        break Label_0158;
+                    }
+                }
+                n5 = n6 * n6 / (n * n + n2 * n2);
+            }
+        }
+        final double n7 = n3 * n3 + n4 * n4 - n5;
+        if (n7 < 0.0) {
+            return 0.0;
+        }
+        return Math.sqrt(n7);
+    }
+}
