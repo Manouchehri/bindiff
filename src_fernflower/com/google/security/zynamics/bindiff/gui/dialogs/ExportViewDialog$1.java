@@ -1,0 +1,5 @@
+package com.google.security.zynamics.bindiff.gui.dialogs;
+
+// $FF: synthetic class
+class ExportViewDialog$1 {
+}
