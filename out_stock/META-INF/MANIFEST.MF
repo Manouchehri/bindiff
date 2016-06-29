@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Created-By: 1.8.0-google-v7-96425618-77620724 (Oracle Corporation)
+Main-Class: com.google.security.zynamics.bindiff.Launcher
+SplashScreen-Image: com/google/security/zynamics/bindiff/data/splashsc
+ reen/splashscreen.jpg
+
